@@ -18,8 +18,11 @@ class Student:
     def add_courses(self,course_name):
         self.finished_courses.append(course_name)
     def average_grade(self):
-        grades_list = self.grades.values()
-        return sum(grades_list)/len(grades_list)
+        def average_grade(self):
+            all_grades = []
+            for grade_list in self.grades.values():
+                all_grades += grade_list
+            return sum(all_grades) / len(all_grades)
     def __str__(self) -> str:
         return (f'Имя: {self.name} \n Фамилия: {self.surname}\n Средняя оценка за домашние задания: {self.average_grade()}\n'
                 f'Курсы в процессе изучения: {', '.join(self.courses_in_progress)}\n Завершенные курсы: {', '.join(self.finished_courses)}\n'
@@ -78,8 +81,11 @@ class Lecturer(Mentor):
     def rate_hw(self):
         pass
     def average_grade(self):
-        grades_list = self.grades.values()
-        return sum(grades_list)/len(grades_list)
+        def average_grade(self):
+            all_grades = []
+            for grade_list in self.grades.values():
+                all_grades += grade_list
+            return sum(all_grades) / len(all_grades)
     def __str__(self) -> str:
         return f'Имя: {self.name} \n Фамилия: {self.surname}\n Средняя оценка за лекции: {self.average_grade()}\n'
 
